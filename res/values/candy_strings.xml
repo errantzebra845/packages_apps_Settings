@@ -323,5 +323,9 @@
     <string name="timeout_1500">1,5 seconds</string>
     <string name="timeout_1000">1 second</string>
     <string name="timeout_500">0,5 second</string>
+    
+   <!-- Battery saver -->
+    <string name="battery_saver_title">Warning color</string>
+    <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
 
 </resources>
