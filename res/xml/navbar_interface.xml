@@ -21,15 +21,24 @@
     settings:keywords="@string/category_navbar">
 
 
-        <PreferenceScreen
-            android:key="navigation_bar"
-            android:fragment="com.android.settings.vanir.navbar.NavbarTabHostFragment"
-            android:title="@string/category_navbar" />
+    <PreferenceScreen
+        android:key="navigation_bar"
+        android:fragment="com.android.settings.vanir.navbar.NavbarTabHostFragment"
+        android:title="@string/category_navbar" />
 
-   <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="navigation_bar_left"
         android:title="@string/navigation_bar_left_title"
         android:summary="@string/navigation_bar_left_summary"
         android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="pie_navigation"
+        android:title="@string/pie_navigation_title"/>
+
+    <PreferenceScreen
+        android:key="pie_settings"
+        android:fragment="com.android.settings.candy.PieControl"
+        android:title="@string/pie_control_title"/>
 
 </PreferenceScreen>
