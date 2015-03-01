@@ -97,8 +97,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private SwitchPreference mTicker;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
-    private ColorPickerPreference mColorPicker;
-    private SwitchPreference mTicker;
     
     private boolean mCheckPreferences;
     
