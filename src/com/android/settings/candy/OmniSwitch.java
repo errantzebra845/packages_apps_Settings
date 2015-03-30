@@ -47,7 +47,7 @@ public class OmniSwitch extends SettingsPreferenceFragment implements
     public static final String OMNISWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
     // Intent for launching the omniswitch settings actvity
     public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
-            .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME  ".SettingsActivity");
+            .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
 
     private SwitchPreference mRecentsUseOmniSwitch;
     private Preference mOmniSwitchSettings;
@@ -56,7 +56,7 @@ public class OmniSwitch extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.cyanide_omniswitch);
+        addPreferencesFromResource(R.xml.omniswitch);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
