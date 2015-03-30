@@ -63,7 +63,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String LOG_TAG = "DeviceInfoSettings";
     private static final String FILENAME_PROC_VERSION = "/proc/version";
     private static final String FILENAME_MSV = "/sys/board_properties/soc/msv";
-    private static final String FILENAME_PROC_CPUINFO = "/proc/cpuinfo";
 
     private static final String KEY_CONTAINER = "container";
     private static final String KEY_REGULATORY_INFO = "regulatory_info";
@@ -77,7 +76,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_KERNEL_VERSION = "kernel_version";
     private static final String KEY_BUILD_NUMBER = "build_number";
     private static final String KEY_DEVICE_MODEL = "device_model";
-    private static final String KEY_DEVICE_PROCESSOR = "device_processor";
     private static final String KEY_SELINUX_STATUS = "selinux_status";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
