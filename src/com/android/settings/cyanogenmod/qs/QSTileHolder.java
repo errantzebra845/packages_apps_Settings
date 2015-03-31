@@ -153,6 +153,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_media_play";
                 stringId = R.string.qs_music_play_tile;
                 break;
+            case QSConstants.TILE_CANDY:
+		resourceName = "ic_qs_candy_on";
+		stringId = R.string.qs_tile_candy;
+		break;
             default:
                 return null;
         }
