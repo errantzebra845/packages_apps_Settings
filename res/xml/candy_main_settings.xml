@@ -92,4 +92,6 @@
          android:fragment="com.android.settings.candy.WakeLockBlocker">
      </PreferenceScreen>
 
+       
+
 </PreferenceScreen>
