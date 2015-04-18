@@ -17,12 +17,10 @@ Preference mMar5hal;
 Preference mCyberScopes;
 Preference mGimmeitorilltell;
 Preference mBMP7777;
-Preference mTr1gg3r84;
 Preference mRc420head;
 Preference mFlashalot;
 Preference mVenomtester;
 Preference mCuzz1369;
-Preference mCannondaleV2000;
 Preference mDarknites;
 Preference mRapier;
 Preference mjavelinanddart;
@@ -38,12 +36,10 @@ mMar5hal = prefSet.findPreference("candy_mar5hal");
 mCyberScopes = prefSet.findPreference("candy_CyberScopes");
 mGimmeitorilltell = prefSet.findPreference("candy_gimmeitorilltell");
 mBMP7777 = prefSet.findPreference("candy_BMP7777");
-mTr1gg3r84 = prefSet.findPreference("candy_tr1gg3r84");
 mRc420head = prefSet.findPreference("candy_rc420head");
 mFlashalot = prefSet.findPreference("candy_flashalot");
 mVenomtester = prefSet.findPreference("candy_venomtester");
 mCuzz1369 = prefSet.findPreference("candy_cuzz1369");
-mCannondaleV2000 = prefSet.findPreference("candy_cannondaleV2000");
 mDarknites = prefSet.findPreference("candy_darknites");
 mRapier = prefSet.findPreference("candy_rapier");
 mjavelinanddart = prefSet.findPreference("candy_javelinanddart");
@@ -61,37 +57,31 @@ public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preferen
 ContentResolver resolver = getActivity().getContentResolver();
 boolean value;
 if (preference == mMatthew0776) {
-Toast.makeText(getActivity(), "Co-Owner Of CandyRoms, Loves Making Icon Packs With Eclipse",
+Toast.makeText(getActivity(), "Co-Owner Of CandyRoms, Gimme all yo candy b*tches, Asian with a white boy name",
 Toast.LENGTH_LONG).show();
 } else if (preference == mMar5hal) {
 Toast.makeText(getActivity(), "Co-Owner Of CandyRoms, Much cool such dev wow :)",
 Toast.LENGTH_LONG).show();
 } else if (preference == mCyberScopes) {
-Toast.makeText(getActivity(), "Theamer for CandyRoms, Part Time Slave To School",
+Toast.makeText(getActivity(), "Themer for CandyRoms, Part Time Slave To School",
 Toast.LENGTH_LONG).show();
 } else if (preference == mGimmeitorilltell) {
-Toast.makeText(getActivity(), "Rom Mantaner for CandyRoms, KeyWords Damint Bobby",
+Toast.makeText(getActivity(), "ROM Mantaner for CandyRoms, Keywords: Dammit Bobby",
 Toast.LENGTH_LONG).show();
 } else if (preference == mBMP7777) {
-Toast.makeText(getActivity(), "Rom Mantaner for CandyRoms, LOVES The Samsung Galaxay Tab 3 7.0 Sprint",
-Toast.LENGTH_LONG).show();
-} else if (preference == mTr1gg3r84) {
-Toast.makeText(getActivity(), "Rom Mantaner for CandyRoms, The BIGGEST GIMP!!! :P",
+Toast.makeText(getActivity(), "ROM Mantaner for CandyRoms, LOVES The Sprint Samsung Galaxay Tab 3 7.0",
 Toast.LENGTH_LONG).show();
 } else if (preference == mRc420head) {
-Toast.makeText(getActivity(), "Rom Mantaner for CandyRoms, Did Someone Say Pot?!?!",
+Toast.makeText(getActivity(), "ROM Mantaner for CandyRoms, Did Someone Say Pot?!?!",
 Toast.LENGTH_LONG).show();
 } else if (preference == mFlashalot) {
-Toast.makeText(getActivity(), "Rom Mantaner for CandyRoms, Dont Test His Zips",
+Toast.makeText(getActivity(), "ROM Mantaner for CandyRoms, Don't Test His Zips",
 Toast.LENGTH_LONG).show();
 } else if (preference == mVenomtester) {
-Toast.makeText(getActivity(), "Theamer for CandyRoms, Loves To Break Clocks with his themes",
+Toast.makeText(getActivity(), "Themer for CandyRoms, Loves To Break Clocks with his themes",
 Toast.LENGTH_LONG).show();
 } else if (preference == mCuzz1369) {
-Toast.makeText(getActivity(), "Rom Mantaner for CandyRoms, Not Batman",
-Toast.LENGTH_LONG).show();
-} else if (preference == mCannondaleV2000) {
-Toast.makeText(getActivity(), "Rom Mantaner for CandyRoms, Masttersr Of teh MD5 L@nuAg3",
+Toast.makeText(getActivity(), "ROM Mantaner for CandyRoms, NOT Batman",
 Toast.LENGTH_LONG).show();
 } else if (preference == mDarknites) {
 Toast.makeText(getActivity(), "Tester/Themer for CandyRoms, Holo is the name Holo is the game",

@@ -29,9 +29,6 @@ android:title="@string/candy_gimmeitorilltell_title" />
 android:key="candy_BMP7777"
 android:title="@string/candy_BMP7777_title" />
 <Preference
-android:key="candy_tr1gg3r84"
-android:title="@string/candy_tr1gg3r84_title" />
-<Preference
 android:key="candy_rc420head"
 android:title="@string/candy_rc420head_title" />
 <Preference
@@ -43,9 +40,6 @@ android:title="@string/candy_venomtester_title" />
 <Preference
 android:key="candy_cuzz1369"
 android:title="@string/candy_cuzz1369_title" />
-<Preference
-android:key="candy_cannondaleV2000"
-android:title="@string/candy_cannondaleV2000_title" />
 <Preference
 android:key="candy_darknites"
 android:title="@string/candy_darknites_title" />
