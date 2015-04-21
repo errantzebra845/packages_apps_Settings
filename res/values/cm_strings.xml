@@ -284,8 +284,10 @@
     <string name="candy5_version_title">Candy5 version</string>
     <string name="candy5_version_default">Unknown</string>
 
-    <!-- About phone screen, model name -->
-    <string name="model_name">Model name</string>
+    <!-- About phone screen, Device model -->
+    <string name="device_model">Device model</string>
+    <!-- About phone screen, Device name -->
+    <string name="device_name">Device name</string>
 
     <!-- About phone screen, build date -->
     <string name="build_date">Build date</string>
