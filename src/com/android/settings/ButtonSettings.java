@@ -198,11 +198,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             }
         }
 
-        if (mNavigationPreferencesCat.getPreferenceCount() == 0) {
-            // Hide navigation bar category
-            prefScreen.removePreference(mNavigationPreferencesCat);
-        }
-
         mVolumeWakeScreen = (SwitchPreference) findPreference(Settings.System.VOLUME_WAKE_SCREEN);
         mVolumeMusicControls = (SwitchPreference) findPreference(KEY_VOLUME_MUSIC_CONTROLS);
 
