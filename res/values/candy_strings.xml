@@ -617,8 +617,11 @@
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
     
-    <!-- Navbar switch -->
+    <!-- Navbar/ button switch -->
+    <string name="key_enabler_title">Navbar/ capacitive buttons</string>
     <string name="navbar_enable_bar_title">Enable on-screen nav bar</string>
     <string name="navbar_enable_bar_summary">Enable on-screen nav bar and disable hardware buttons</string>
+    <string name="hw_keys_title">Hardware keys</string>
+    <string name="hw_keys_summary">Enable hardware keys</string>
     
 </resources>
