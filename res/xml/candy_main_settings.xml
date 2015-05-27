@@ -42,7 +42,7 @@
     <PreferenceScreen
          android:key="battery_bar"
          android:fragment="com.android.settings.candy.BatteryBar"
-         android:title="@string/battery_bar" />
+         android:title="@string/battery_bar_listview" />
 
     <!-- Buttons -->  
       <PreferenceScreen
