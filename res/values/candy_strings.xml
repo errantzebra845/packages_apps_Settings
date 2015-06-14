@@ -292,9 +292,9 @@
     <string name="shortcuts_icon_picker_unlock">Unlock</string>
 
     <!-- Lockscreen Shortcuts -->
-    <string name="lockscreen_shortcuts_title">Lockscreen Shortcuts</string>
+    <string name="lockscreen_shortcuts_title">Lockscreen shortcuts</string>
     <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
-    <string name="lockscreen_shorcuts_launch_type_title">Lockscreen Shortcut click type</string>
+    <string name="lockscreen_shorcuts_launch_type_title">Lockscreen shortcut click type</string>
     <string name="lockscreen_shortcuts_single_tap">Click</string>
     <string name="lockscreen_shortcuts_double_tap">Double tap</string>
     <string name="lockscreen_shortcuts_longpress">Longpress</string>
@@ -513,9 +513,9 @@
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
       
     <!-- Gesture Anywhere -->
-    <string name="gesture_anywhere_title">Gesture Anywhere</string>
-    <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
-    <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
+    <string name="gesture_anywhere_title">Gesture anywhere</string>
+    <string name="gesture_anywhere_enabled_title">Gesture anywhere</string>
+    <string name="gesture_anywhere_enabled_summary">Enable the gesture anywhere feature</string>
     <string name="gesture_anywhere_position_title">Loction</string>
     <string name="gesture_anywhere_position_left">Left edge</string>
     <string name="gesture_anywhere_position_right">Right edge</string>
@@ -563,6 +563,7 @@
     <string name="changelog_candy_error">Unable to load changelog</string>
     
     <!-- Heads Up -->
+    <string name="heads_up_title">Heads up</string>
     <string name="category_heads_up">Heads up notifications</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
