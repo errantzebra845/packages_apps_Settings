@@ -563,7 +563,7 @@
     <string name="changelog_candy_error">Unable to load changelog</string>
     
     <!-- Heads Up -->
-    <string name="heads_up_title">Heads up</string>
+    <string name="title_heads_up">Heads up</string>
     <string name="category_heads_up">Heads up notifications</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>

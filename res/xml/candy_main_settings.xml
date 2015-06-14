@@ -60,7 +60,7 @@
 	<!-- Heads up -->
     <PreferenceScreen
         android:key="heads_up_enabled"
-        android:title="@string/heads_up_title"
+        android:title="@string/title_heads_up"
         android:fragment="com.android.settings.candy.HeadsUpSettings" />
 
     <!-- Lock screen -->
