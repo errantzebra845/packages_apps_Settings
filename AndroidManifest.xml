@@ -2346,6 +2346,9 @@
             </intent-filter>
         </provider>
 
+		<!-- Heads up -->
+        <activity android:name=".headsup.HeadsUpSettings" />
+
         <receiver
             android:name=".cyanogenmod.ProtectedAppsReceiver"
             android:permission="cyanogenmod.permission.PROTECTED_APP">
