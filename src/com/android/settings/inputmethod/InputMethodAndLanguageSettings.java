@@ -27,7 +27,6 @@ import android.content.SharedPreferences;
 import android.content.pm.ServiceInfo;
 import android.content.res.Configuration;
 import android.database.ContentObserver;
-import android.hardware.CmHardwareManager;
 import android.hardware.input.InputDeviceIdentifier;
 import android.hardware.input.InputManager;
 import android.hardware.input.KeyboardLayout;
@@ -44,7 +43,6 @@ import android.provider.Settings;
 import android.provider.Settings.System;
 import android.speech.tts.TtsEngines;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.InputDevice;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -75,13 +73,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TreeSet;
 
+import org.cyanogenmod.hardware.HighTouchSensitivity;
+import org.cyanogenmod.hardware.TouchscreenHovering;
+
 public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener, InputManager.InputDeviceListener,
         KeyboardLayoutDialogFragment.OnSetupKeyboardLayoutsListener, Indexable,
         InputMethodPreference.OnSavePreferenceListener {
-
-    private static final String TAG = "InputMethodAndLanguageSettings";
-
     private static final String KEY_SPELL_CHECKERS = "spellcheckers_settings";
     private static final String KEY_PHONE_LANGUAGE = "phone_language";
     private static final String KEY_CURRENT_INPUT_METHOD = "current_input_method";
@@ -130,7 +128,6 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private Intent mIntentWaitingForResult;
     private InputMethodSettingValuesWrapper mInputMethodSettingValues;
     private DevicePolicyManager mDpm;
-    private CmHardwareManager mCmHardwareManager;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -141,8 +138,6 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         final Activity activity = getActivity();
         mImm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mInputMethodSettingValues = InputMethodSettingValuesWrapper.getInstance(activity);
-
-        mCmHardwareManager = (CmHardwareManager) getSystemService(Context.CMHW_SERVICE);
 
         try {
             mDefaultInputMethodSelectorVisibility = Integer.valueOf(
@@ -206,21 +201,18 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                 pointerSettingsCategory.removePreference(mStylusIconEnabled);
             }
 
-            if (!mCmHardwareManager.isSupported(
-                    CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY)) {
+            if (!isHighTouchSensitivitySupported()) {
                 pointerSettingsCategory.removePreference(mHighTouchSensitivity);
                 mHighTouchSensitivity = null;
             } else {
-                mHighTouchSensitivity.setChecked(
-                        mCmHardwareManager.get(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY));
+                mHighTouchSensitivity.setChecked(HighTouchSensitivity.isEnabled());
             }
 
-            if (!mCmHardwareManager.isSupported(CmHardwareManager.FEATURE_TOUCH_HOVERING)) {
+            if (!isTouchscreenHoveringSupported()) {
                 pointerSettingsCategory.removePreference(mTouchscreenHovering);
                 mTouchscreenHovering = null;
             } else {
-                mTouchscreenHovering.setChecked(
-                        mCmHardwareManager.get(CmHardwareManager.FEATURE_TOUCH_HOVERING));
+                mTouchscreenHovering.setChecked(TouchscreenHovering.isEnabled());
             }
 
             Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
@@ -450,11 +442,9 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                 }
             }
         } else if (preference == mHighTouchSensitivity) {
-            return mCmHardwareManager.set(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY,
-                    mHighTouchSensitivity.isChecked());
+            return HighTouchSensitivity.setEnabled(mHighTouchSensitivity.isChecked());
         } else if (preference == mTouchscreenHovering) {
-            return mCmHardwareManager.set(CmHardwareManager.FEATURE_TOUCH_HOVERING,
-                    mTouchscreenHovering.isChecked());
+            return TouchscreenHovering.setEnabled(mTouchscreenHovering.isChecked());
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -732,6 +722,24 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         }
     }
 
+    private static boolean isHighTouchSensitivitySupported() {
+        try {
+            return HighTouchSensitivity.isSupported();
+        } catch (NoClassDefFoundError e) {
+            // Hardware abstraction framework not installed
+            return false;
+        }
+    }
+
+   private static boolean isTouchscreenHoveringSupported() {
+        try {
+            return TouchscreenHovering.isSupported();
+        } catch (NoClassDefFoundError e) {
+            // Hardware abstraction framework not installed
+            return false;
+        }
+    }
+
     private static boolean haveInputDeviceWithVibrator() {
         final int[] devices = InputDevice.getDeviceIds();
         for (int i = 0; i < devices.length; i++) {
@@ -765,31 +773,6 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
 
         public void pause() {
             mContext.getContentResolver().unregisterContentObserver(this);
-        }
-    }
-
-    public static void restore(Context context) {
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        final CmHardwareManager cmHardwareManager =
-                (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
-        if (cmHardwareManager.isSupported(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY)) {
-            final boolean enabled = prefs.getBoolean(KEY_HIGH_TOUCH_SENSITIVITY,
-                    cmHardwareManager.get(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY));
-            if (!cmHardwareManager.set(CmHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY,
-                    enabled)) {
-                Log.e(TAG, "Failed to restore high touch sensitivity settings.");
-            } else {
-                Log.d(TAG, "High touch sensitivity settings restored.");
-            }
-        }
-        if (cmHardwareManager.isSupported(CmHardwareManager.FEATURE_TOUCH_HOVERING)) {
-            final boolean enabled = prefs.getBoolean(KEY_TOUCHSCREEN_HOVERING,
-                    cmHardwareManager.get(CmHardwareManager.FEATURE_TOUCH_HOVERING));
-            if (!cmHardwareManager.set(CmHardwareManager.FEATURE_TOUCH_HOVERING, enabled)) {
-                Log.e(TAG, "Failed to restore touch hovering settings.");
-            } else {
-                Log.d(TAG, "Touch hovering settings restored.");
-            }
         }
     }
 

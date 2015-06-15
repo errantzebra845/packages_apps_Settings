@@ -28,7 +28,6 @@ import android.content.pm.ServiceInfo;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
-import android.hardware.CmHardwareManager;
 import android.media.AudioManager;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -53,6 +52,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.android.settings.hardware.VibratorIntensity;
 import com.android.settings.notification.IncreasingRingVolumePreference;
 import com.android.settings.notification.NotificationAccessSettings;
 import com.android.settings.notification.VolumeSeekBarPreference;
@@ -157,9 +157,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
             volumes.removePreference(volumes.findPreference(KEY_VOLUME_LINK_NOTIFICATION));
         }
 
-        CmHardwareManager cmHardwareManager =
-                (CmHardwareManager) getSystemService(Context.CMHW_SERVICE);
-        if (!cmHardwareManager.isSupported(CmHardwareManager.FEATURE_VIBRATOR)) {
+        if (!VibratorIntensity.isSupported()) {
             Preference preference = vibrate.findPreference(KEY_VIBRATION_INTENSITY);
             if (preference != null) {
                 vibrate.removePreference(preference);
@@ -616,10 +614,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
+        private boolean mHasVibratorIntensity;
 
         @Override
         public void prepare() {
             super.prepare();
+            mHasVibratorIntensity = VibratorIntensity.isSupported();
         }
 
         public List<SearchIndexableResource> getXmlResourcesToIndex(
@@ -642,9 +642,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements Indexab
             if (vib == null || !vib.hasVibrator()) {
                 rt.add(KEY_VIBRATE);
             }
-            CmHardwareManager cmHardwareManager =
-                    (CmHardwareManager) context.getSystemService(Context.CMHW_SERVICE);
-            if (!cmHardwareManager.isSupported(CmHardwareManager.FEATURE_VIBRATOR)) {
+            if (!mHasVibratorIntensity) {
                 rt.add(KEY_VIBRATION_INTENSITY);
             }
 
