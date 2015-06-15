@@ -400,6 +400,7 @@
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_style_title">Clock style</string>
+    <string name="category_clock_settings">Clock settings</string>
     <string name="status_bar_clock_style_right">Right</string>
     <string name="status_bar_clock_style_left">Left</string>
     <string name="status_bar_clock_style_center">Center</string>
@@ -413,6 +414,7 @@
 
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Battery status style</string>
+    <string name="category_battery_style">Battery style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
     <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
     <string name="status_bar_battery_style_circle">Circle</string>

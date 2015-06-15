@@ -29,6 +29,7 @@
     <string name="category_general_title">General Options</string>
     <string name="candy_settings_title">Candy interface</string>
     <string name="header_category_personalization">Personalization</string>
+    <string name="category_misc">Misc.</string>
 
     <!-- Candy interface -->
     <string name="Candy_title">Candy interface</string>
@@ -417,6 +418,7 @@
     <!--Status bar date -->
     <string name="status_bar_clock_category">Clock</string>
     <string name="status_bar_date_title">Date</string>
+    <string name="category_date_settings">Date options</string>
     <string name="status_bar_date_none">Hidden (default)</string>
     <string name="status_bar_date_small">Small</string>
     <string name="status_bar_date_normal">Normal</string>
