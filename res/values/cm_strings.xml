@@ -135,6 +135,7 @@
 
     <!-- Hardware keys -->
     <string name="button_pref_title">Buttons</string>
+    <string name="summary_button_settings">Hardware button settings</string>
     <string name="hardware_keys_power_key_title">Power button</string>
     <string name="hardware_keys_home_key_title">Home button</string>
     <string name="hardware_keys_back_key_title">Back button</string>
@@ -391,6 +392,7 @@
 
     <!-- Status bar -->
     <string name="status_bar_title">Status bar</string>
+    <string name="summary_status_bar">Misc statusbar options (ie. battery, clock, brightness etc)</string>
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
@@ -992,6 +994,7 @@
 
     <!-- Notification drawer -->
     <string name="notification_drawer_title">Notification drawer</string>
+    <string name="summary_notification_drawer">Configure notification bar options and quick settings</string>
 
     <string name="quick_pulldown_title">Quick pulldown</string>
     <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
@@ -1155,7 +1158,11 @@
     <string name="category_calibration">Calibration</string>
     <string name="display_and_lights">Display &amp; lights</string>
     <string name="notification_manager">Notifications</string>
+    <string name="notification_alert_manager">Alerts</string>
+    <string name="summary_alert_notification_manager">Application and system wide notification settings</string>
     <string name="lockscreen_settings">Lock screen</string>
+    <string name="title_lockscreen_settings">Screen security</string>
+    <string name="summary_lockscreen_settings">Lockscreen options</string>
     <string name="category_lights">Lights</string>
     <string name="power_usage_history_title">Battery usage</string>
 
