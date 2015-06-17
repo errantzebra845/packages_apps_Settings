@@ -1163,8 +1163,8 @@
     <string name="notification_alert_manager">Alerts</string>
     <string name="summary_alert_notification_manager">Application and system wide notification settings</string>
     <string name="lockscreen_settings">Lock screen</string>
-    <string name="title_lockscreen_settings">Screen security</string>
-    <string name="summary_lockscreen_settings">Lockscreen options</string>
+    <string name="title_lockscreen_settings">Lockscreen settings</string>
+    <string name="summary_lockscreen_settings">Custom security and application settings</string>
     <string name="category_lights">Lights</string>
     <string name="power_usage_history_title">Battery usage</string>
 
