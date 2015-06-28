@@ -1,3 +1,7 @@
+packages_apps_Settings/src/com/android/settings/SettingsActivity.java
+@cristianomatoscristianomatos 17 days ago [Settings] Improve HeadsUp
+19 contributors @romanbb @mikeNG @cyanogen @defer @alanv @Danesh @Decad3nce @koush @matthew0776 @linusleeC @rc420head @rmcc @maniac103 @sam3000 @invisiblek @cristianomatos @bmc08gt @inwotep @errantzebra845
+RawBlameHistory     1480 lines (1297 sloc)  61.629 kB
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -333,7 +337,8 @@ public class SettingsActivity extends Activity
             LockScreenSettings.class.getName(),
             LiveDisplay.class.getName(),
             DisplayRotation.class.getName(),
-            HeadsUpSettings.class.getName()
+            HeadsUpSettings.class.getName(),
+            ButtonSettings.class.getName()
     };
 
 
