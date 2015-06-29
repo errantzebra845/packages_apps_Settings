@@ -103,6 +103,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_LIGHT = "battery_light";
     private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
 
+
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private ListPreference mLcdDensityPreference;
@@ -258,6 +259,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 (SwitchPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
 
         initPulse((PreferenceCategory) findPreference(KEY_CATEGORY_LIGHTS));
+        
+                
     }
 
     private int getDefaultDensity() {

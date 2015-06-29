@@ -22,6 +22,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.os.SystemProperties;
@@ -48,10 +49,12 @@ import com.android.settings.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.android.settings.Utils;
 
 public class MainSettings extends SettingsPreferenceFragment  implements
         Preference.OnPreferenceChangeListener, Indexable {
 private static final String TAG = "MainSettings";
+private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
 
          @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,9 @@ private static final String TAG = "MainSettings";
          final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.candy_main_settings);
+        
+        Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
+                getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS);
           
         PreferenceScreen prefSet = getPreferenceScreen();
 
@@ -74,6 +80,17 @@ private static final String TAG = "MainSettings";
         
         return true;
       }
+      
+       private boolean isDeviceHandlerInstalled() {
+        boolean ret = true;
+        final PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo("com.candy.device", PackageManager.GET_META_DATA);
+        } catch (NameNotFoundException e) {
+            ret = false;
+        }
+        return ret;
+    }
       
      public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
