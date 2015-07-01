@@ -30,7 +30,7 @@
     <string name="category_misc">Misc.</string>
 
     <!-- Candy interface -->
-    <string name="Candy_title">It worked!</string>
+    <string name="Candy_title">Candy interface</string>
     <string name="Status_bar">Status bar</string>
     <string name="interface_title">Interface</string>
     <string name="controls_title">Controls</string>
