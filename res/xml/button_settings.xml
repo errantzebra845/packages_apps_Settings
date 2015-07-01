@@ -18,9 +18,9 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <SwitchPreference
-        android:key="disable_nav_keys"
-        android:title="@string/disable_navkeys_title"
-        android:summary="@string/disable_navkeys_summary"
+        android:key="enable_nav_bar"
+        android:title="@string/navbar_enable_bar_title"
+        android:summary="@string/navbar_enable_bar_summary"
         android:defaultValue="false" />
 
     <com.android.settings.cyanogenmod.ButtonBacklightBrightness
@@ -41,8 +41,6 @@
             android:dialogTitle="@string/navigation_bar_recents_title"
             android:title="@string/navigation_bar_recents_title"
             android:persistent="false" />
-
-    
 
     <PreferenceCategory
         android:key="power_key"

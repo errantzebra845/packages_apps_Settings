@@ -30,7 +30,7 @@
     <string name="category_misc">Misc.</string>
 
     <!-- Candy interface -->
-    <string name="Candy_title">Candy interface</string>
+    <string name="Candy_title">It worked!</string>
     <string name="Status_bar">Status bar</string>
     <string name="interface_title">Interface</string>
     <string name="controls_title">Controls</string>
@@ -616,5 +616,9 @@
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
+    
+    <!-- Navbar switch -->
+    <string name="navbar_enable_bar_title">Enable on-screen nav bar</string>
+    <string name="navbar_enable_bar_summary">Enable on-screen nav bar and disable hardware buttons</string>
     
 </resources>
