@@ -602,9 +602,9 @@
     
     <!-- Navbar/ button switch -->
     <string name="key_enabler_title">Navbar/ capacitive buttons</string>
-    <string name="navbar_enable_bar_title">Enable on-screen nav bar</string>
-    <string name="navbar_enable_bar_summary">Enable on-screen nav bar and disable hardware buttons</string>
+    <string name="navbar_enable_bar_title">Enable nav-bar</string>
+    <string name="navbar_enable_bar_summary">Enable/ disable on-screen nav buttons</string>
     <string name="hw_keys_title">Hardware keys</string>
-    <string name="hw_keys_summary">Enable hardware keys</string>
+    <string name="hw_keys_summary">Enable/ disable hardware keys</string>
     
 </resources>
