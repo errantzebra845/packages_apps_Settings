@@ -104,6 +104,12 @@
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
                 
+        <!-- Device aoezp version -->
+        <Preference android:key="aoezp_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/aoezp_version"
+                android:summary="@string/aoezp_version_default" />
+
         <!-- Device firmware version -->
         <Preference android:key="firmware_version" 
                 style="?android:preferenceInformationStyle"
